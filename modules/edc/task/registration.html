@@ -1142,7 +1142,8 @@
             //-------------
             var dbv={}
             var db_pid=$vm.module_list[$vm.vm["__ID"].name].table_id;
-            var req={cmd:"add_json_record",db_pid:db_pid,data:record,dbv:dbv};
+            //var req={cmd:"add_json_record",db_pid:db_pid,data:record,dbv:dbv};
+			var req={cmd:"add_record_anonymous",db_pid:db_pid,data:record,dbv:dbv};
             $VmAPI.request({data:req,callback:function(res){
                 if(res.ret<=0)	$vm.alert("Sorry there is a problem. You can try again later.")
                 else{
